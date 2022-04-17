@@ -10,7 +10,6 @@ public:
                 i=k;
         }
         x=strs[i];
-        cout<<x;
         for(int i=0;i<strs.size();i++)
         {
             int index=0;
