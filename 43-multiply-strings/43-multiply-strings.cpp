@@ -2,7 +2,18 @@ class Solution {
 public:
     string multiply(string num1, string num2) 
     {
-        int maxl=max(num1.length(),num2.length());
+    bool nega=false;
+    if(num1[0]=='-')
+    {
+        nega=true;
+        num1.begin()=num1.erase(num1.begin());
+    }
+    if(num2[0]=='-')
+    {
+        nega=!nega;
+        num2.begin()=num2.erase(num2.begin());
+    }
+    int maxl=max(num1.length(),num2.length());
         if(num1.length()==maxl)
         {
             int l=maxl-num2.length();
@@ -52,7 +63,9 @@ public:
         if(ret=="")
             return "0";
         if(carry)
-            return "1"+ret;
+            ret= "1"+ret;
+        if(nega)
+            ret="-"+ret;
         return ret;
         
     }
