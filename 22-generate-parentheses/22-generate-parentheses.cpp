@@ -37,6 +37,7 @@ public:
         vector<string>strlist;
         stack<char>st;
         backtrck(n,"",strlist,st);
+        cout<<strlist.size();
         return strlist;
     }
 };
