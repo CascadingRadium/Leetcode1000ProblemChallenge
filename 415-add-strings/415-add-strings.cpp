@@ -17,7 +17,7 @@ public:
             if(i<l2)
                 b=(num2[i]-'0');
             int y=a+b+carry;
-            x+=(to_string(y%10));
+            x+=('0'+(y%10));
             carry=y/10;
         }
         if(carry)
