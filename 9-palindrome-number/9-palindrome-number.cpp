@@ -2,14 +2,17 @@ class Solution {
 public:
     bool isPalindrome(int x) 
     {
-        string str=to_string(x);
-        std::reverse(str.begin(),str.end());
-        int y;
-        try{
-        y=stoi(str);}
-        catch(const exception&e)
-        {return false;}
-        return y==x;
-        
+        long long y=0;
+        if(x<0)
+            return false;
+        int control=x;
+        while(x>0)
+        {
+            y+=x%10;
+            y*=10;
+            x/=10;
+        }
+        y/=10;
+        return y==control;
     }
 };
