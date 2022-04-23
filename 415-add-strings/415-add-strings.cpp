@@ -17,11 +17,11 @@ public:
             if(i<l2)
                 b=(num2[i]-'0');
             int y=a+b+carry;
-            x+=((y%10)+'0');
+            x.push_back(((y%10)+'0'));
             carry=y/10;
         }
         if(carry)
-            x+="1";
+            x.push_back('1');
         reverse(x.begin(),x.end());
         return x;
         
