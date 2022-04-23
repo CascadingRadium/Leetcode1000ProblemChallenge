@@ -5,10 +5,10 @@ public:
         vector<string> row(n+1);
         row[0]="";
         row[1]="1";
-        for(int i=2;i<=n;i++)
+        for(int rowindex=2;rowindex<=n;rowindex++)
         {
             string y="";
-            string x=row[i-1];
+            string x=row[rowindex-1];
             int n=x.length();
             for(int i=0;i<n;i++)
             {
@@ -24,7 +24,7 @@ public:
                 y.push_back(num);
                 i+=(cnt-1);
             }
-            row[i]=y;
+            row[rowindex]=y;
         }
         return row[n];
     }
