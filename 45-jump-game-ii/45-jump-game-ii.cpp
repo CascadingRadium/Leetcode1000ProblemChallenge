@@ -5,9 +5,10 @@ public:
         vector<int> row(nums.size());
         int n=nums.size();
         row[n-1]=0;
+        int minjmp=INT_MAX;
         for(int i=n-2;i>=0;i--)
         {
-            int minjmp=INT_MAX;
+            minjmp=INT_MAX;
             for(int jmp=1;jmp<=nums[i];jmp++)
             {
                 if(i+jmp<n)
