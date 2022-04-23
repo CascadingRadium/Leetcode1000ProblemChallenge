@@ -2,10 +2,9 @@ class Solution {
 public:
     string countAndSay(int n) 
     {
-        vector<string> row(n+1);
-        row[0]="";
-        row[1]="1";
-        for(int rowindex=2;rowindex<=n;rowindex++)
+        vector<string> row(n);
+        row[0]="1";
+        for(int rowindex=1;rowindex<n;rowindex++)
         {
             string y="";
             string x=row[rowindex-1];
@@ -26,6 +25,6 @@ public:
             }
             row[rowindex]=y;
         }
-        return row[n];
+        return row[n-1];
     }
 };
