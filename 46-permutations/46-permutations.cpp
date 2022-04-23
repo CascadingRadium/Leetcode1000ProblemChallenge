@@ -7,7 +7,7 @@ public:
         next_permutation(nums.begin(),nums.end());
         while(nums!=x)
         {
-            ret.push_back(nums);
+             ret.push_back(nums);
              next_permutation(nums.begin(),nums.end());
         }
         ret.push_back(x);
