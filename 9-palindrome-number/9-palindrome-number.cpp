@@ -3,8 +3,6 @@ public:
     bool isPalindrome(int x) 
     {
         long long y=0;
-        if(x<0)
-            return false;
         int control=x;
         while(x>0)
         {
