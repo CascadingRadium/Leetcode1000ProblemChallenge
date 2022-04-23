@@ -1,8 +1,20 @@
 class Solution {
 public:
-    bool canReach(vector<int>& A, int cur) {
-        if(cur < 0 || cur >= size(A) || A[cur] < 0) return false;                  // out of bounds OR already visited ? return false
-        A[cur] *= -1;       // mark as visited by making -ve
-        return !A[cur] || canReach(A, cur + A[cur]) || canReach(A, cur - A[cur]);  // return true if A[cur] == 0 or recurse for both possible jumps
+    bool dfs(vector<bool>&visited,vector<int>&nums,int k)
+    {
+        if(k<0||k>=nums.size()||visited[k])
+            return false;
+        if(nums[k]==0)
+            return true;
+        visited[k]=true;
+        if(dfs(visited,nums,k+nums[k]) || dfs(visited,nums,k-nums[k]))
+            return true;
+        return false;  
+        
+    }
+    bool canReach(vector<int>& nums, int k)
+    {
+        vector<bool>visited(nums.size());
+        return dfs(visited,nums,k);
     }
 };
