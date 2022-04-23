@@ -17,7 +17,7 @@ public:
             if(i<l2)
                 b=(num2[i]-'0');
             int y=a+b+carry;
-            x+=('0'+(y%10));
+            x+=((y%10)+'0');
             carry=y/10;
         }
         if(carry)
