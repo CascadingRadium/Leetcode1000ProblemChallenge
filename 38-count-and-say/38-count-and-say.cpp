@@ -2,29 +2,32 @@ class Solution {
 public:
     string countAndSay(int n) 
     {
-        string x="1";
-        while(n>1)
+        vector<string> row(n+1);
+        row[0]="";
+        row[1]="1";
+        for(int i=2;i<=n;i++)
         {
-            --n;
             string y="";
-            char firstchar=x[0];
-            int fcharcnt=0;
-            for(auto i:x)
+            string x=row[i-1];
+            int n=x.length();
+            for(int i=0;i<n;i++)
             {
-                if(i==firstchar)
-                    fcharcnt++;
-                else
+                char num=x[i];
+                int cnt=1;
+                for(int j=i+1;j<n;j++)
                 {
-                    y+=to_string(fcharcnt);
-                    y.push_back(firstchar);
-                    firstchar=i;
-                    fcharcnt=1;
+                    if(x[j]!=num)
+                        break;
+                    cnt++;
                 }
+                y+=(to_string(cnt));
+                y.push_back(num);
+                i+=(cnt-1);
             }
-            y+=to_string(fcharcnt);
-            y.push_back(firstchar);
-            x=y;
+            row[i]=y;
         }
-        return x;
+        for(auto i:row)
+            cout<<i<<' ';
+        return row[n];
     }
 };
