@@ -26,8 +26,6 @@ public:
             }
             row[i]=y;
         }
-        for(auto i:row)
-            cout<<i<<' ';
         return row[n];
     }
 };
