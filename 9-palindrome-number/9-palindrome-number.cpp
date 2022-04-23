@@ -6,11 +6,10 @@ public:
         int control=x;
         while(x>0)
         {
-            y+=x%10;
-            y*=10;
+            int r=x%10;
+            y=y*10+r;
             x/=10;
         }
-        y/=10;
         return y==control;
     }
 };
