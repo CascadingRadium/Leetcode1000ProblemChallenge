@@ -8,7 +8,7 @@ public:
             for(int j=0;j<9;j++)
             {
                 char n=board[i][j];
-                if(board[i][j]!='.')
+                if(n!='.')
                 {
                     if(hmaparray[i].count(n)>0||hmaparray[9+j].count(n)>0||hmaparray[18+(3*(i/3))+(j/3)].count(n)>0)
                         return false;
