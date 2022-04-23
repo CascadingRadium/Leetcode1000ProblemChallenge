@@ -2,7 +2,7 @@ class Solution {
 public:
     bool isValidSudoku(vector<vector<char>>& board) 
     {
-        vector<set<char>> hmaparray(27);
+        vector<unordered_set<char>> hmaparray(27);
         for(int i=0;i<9;i++)
         {
             for(int j=0;j<9;j++)
