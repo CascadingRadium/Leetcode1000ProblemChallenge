@@ -1,30 +1,21 @@
 class Solution {
 public:
-    void backtrack(vector<int>&nums, int curpos, bool &flag, vector<bool>&visited)
+    bool dfs(vector<bool>&visited,vector<int>&nums,int k)
     {
-        if(curpos<0||curpos>=nums.size())
-            return;
-        if(nums[curpos]==0)
-            flag=true;
-        if(visited[curpos])
-            return;
-        else
-        {
-            if(nums[curpos]==0)
-                return;
-            visited[curpos]=true;
-            backtrack(nums,nums[curpos]+curpos,flag,visited);
-            if(flag)
-                return;
-            backtrack(nums,curpos-nums[curpos],flag,visited);
-        }
+        cout<<k<<' ';
+        if(k<0||k>=nums.size()||visited[k])
+            return false;
+        if(nums[k]==0)
+            return true;
+        visited[k]=true;
+        if(dfs(visited,nums,k+nums[k]) || dfs(visited,nums,k-nums[k]))
+            return true;
+        return false;  
+        
     }
-    
     bool canReach(vector<int>& nums, int k)
     {
-        bool flag=false;
         vector<bool>visited(nums.size());
-        backtrack(nums,k,flag,visited);
-        return flag;     
+        return dfs(visited,nums,k);
     }
 };
