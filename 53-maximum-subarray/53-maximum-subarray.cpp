@@ -6,11 +6,8 @@ public:
         int tempmax=0;
         for(int i=0;i<nums.size();++i)
         {
-            tempmax=tempmax+nums[i];
-            if(tempmax>max)
-                max=tempmax;
-            if(tempmax<0)
-                tempmax=0;
+            tempmax=std::max(nums[i],tempmax+nums[i]);
+            max=std::max(max,tempmax);
         }
         return max;
     }
