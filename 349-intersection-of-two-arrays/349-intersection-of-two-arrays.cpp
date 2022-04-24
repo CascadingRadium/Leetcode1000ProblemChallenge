@@ -8,13 +8,13 @@ public:
         if(s1.size()<s2.size())
         {
             for(auto i:s1)
-                if(s2.count(i))
+                if(s2.find(i)!=s2.end())
                     ret.push_back(i);
         }
         else
         {
              for(auto i:s2)
-                if(s1.count(i))
+                if(s1.find(i)!=s1.end())
                     ret.push_back(i);
         }
         return ret;
