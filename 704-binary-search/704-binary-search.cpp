@@ -3,16 +3,18 @@ public:
     int search(vector<int>& nums, int target) 
     {
         int l=0,r=nums.size()-1;
-        while(l<=r)
+        while(r-l>1)
         {
             int mid=l+(r-l)/2;
-            if(nums[mid]==target)
-                return mid;
             if(nums[mid]<target)
                 l=mid+1;
             else 
-                r=mid-1;
+                r=mid;
         }
+        if(nums[r]==target)
+            return r;
+        if(nums[l]==target)
+            return l;
         return -1;
         
     }
