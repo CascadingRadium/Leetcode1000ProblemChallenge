@@ -7,10 +7,12 @@ public:
         {
             int mid=l+(r-l)/2;
             if(nums[mid]<target)
-                l=mid+1;
+                l=mid;
             else 
                 r=mid;
         }
+        cout<<l<<' '<<nums[l]<<'\n';
+        cout<<r<<' '<<nums[r]<<'\n';
         if(nums[r]==target)
             return r;
         if(nums[l]==target)
