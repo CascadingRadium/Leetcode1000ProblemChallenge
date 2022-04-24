@@ -11,8 +11,6 @@ public:
             else 
                 r=mid;
         }
-        cout<<l<<' '<<nums[l]<<'\n';
-        cout<<r<<' '<<nums[r]<<'\n';
         if(nums[r]==target)
             return r;
         if(nums[l]==target)
