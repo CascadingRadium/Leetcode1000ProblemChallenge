@@ -8,15 +8,14 @@ public:
         {
             if(i==0)
                 zerocnt++;
-            else
-                s1.insert(i);
         }
         if(zerocnt>1)
             return true;
-        for(auto i:s1)
+        for(auto i:arr)
         {
-            if(s1.count(2*i))
+            if(s1.count(2*i)||(i%2==0&&s1.count(i/2)))
                 return true;
+            s1.insert(i);
         }
         return false;
         
