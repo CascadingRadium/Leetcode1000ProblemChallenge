@@ -9,13 +9,9 @@ public:
         {
             int mid=l+(r-l)/2;
             if(arr[mid+1]<arr[mid])
-            {
                 r=mid;
-            }
             else
-            {
                 l=mid;
-            }
         }
         if(arr[l]<arr[r])
             return r;
