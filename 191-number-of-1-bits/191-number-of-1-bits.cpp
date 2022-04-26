@@ -2,8 +2,14 @@ class Solution {
 public:
     int hammingWeight(uint32_t n) 
     {
-        bitset<32> x(n);
-        return x.count();
+        int k=0;
+        while(n>0)
+        {
+            if(n&1==1)
+                k++;
+            n>>=1;
+        }
+        return k;
         
     }
 };
