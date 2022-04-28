@@ -9,7 +9,7 @@ public:
             m=INT_MAX;
         if(m==INT_MAX)
         {
-            for(int i=3;i<coordinates.size();i++)
+            for(int i=2;i<coordinates.size();i++)
             {
                 if(coordinates[i][0]!=coordinates[0][0])
                     return false;
