@@ -18,7 +18,6 @@ public:
         }
         
         int c=coordinates[0][1]-(m*coordinates[0][0]);
-        cout<<m<<' '<<c;
         for(int i=2;i<coordinates.size();i++)
         {
             if(coordinates[i][1]!=(m*coordinates[i][0])+c)
