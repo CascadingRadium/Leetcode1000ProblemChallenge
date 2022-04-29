@@ -2,15 +2,17 @@ class Solution {
 public:
     int arrangeCoins(int n) 
     {
-        int ret=0;
-        long long k=1;
-        int diff=2;
-        while(n>=k)
+        long long l=1,r=n;
+        while(r-l>1)
         {
-            ret++;
-            k+=diff;
-            diff+=1;
+            long long mid=l+(r-l)/2;
+            if((mid*(mid+1))/2<n)
+                l=mid;
+            else
+                r=mid;
         }
-        return ret;
+        if((r*(r+1))/2<=n)
+            return r;
+        return l;
     }
 };
