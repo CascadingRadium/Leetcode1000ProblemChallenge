@@ -16,17 +16,15 @@ public:
             return temp2;
         if(!temp2)
             return temp1;
-        ListNode* tmp1=temp1->next;
-        ListNode* tmp2=temp2->next;
         ListNode* ret;
         if(temp1->val<=temp2->val)
         {
-            temp1->next=mergeTwoLists(tmp1,temp2);
+            temp1->next=mergeTwoLists(temp1->next,temp2);
             ret= temp1;
         }
         else
         {
-            temp2->next=mergeTwoLists(temp1,tmp2);
+            temp2->next=mergeTwoLists(temp1,temp2->next);
             ret= temp2;
         }
         return ret;
