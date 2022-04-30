@@ -19,7 +19,5 @@ public:
         if(head)
             head->next= removeElements(head->next,val);
         return head;
-        
-        
     }
 };
