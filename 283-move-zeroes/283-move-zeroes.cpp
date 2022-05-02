@@ -5,13 +5,12 @@ public:
         int count=0;
         for(int i=0;i<nums.size();i++)
         {
-            if(nums[i]==0)
-            {
-                nums.erase(nums.begin()+i--);
-                count++;
-            }
+            if(nums[i]!=0)
+                nums[count++]=nums[i];
         }
-        nums.insert(nums.end(),count,0);
-        
+        while(count<nums.size())
+        {
+            nums[count++]=0;
+        }
     }
 };
