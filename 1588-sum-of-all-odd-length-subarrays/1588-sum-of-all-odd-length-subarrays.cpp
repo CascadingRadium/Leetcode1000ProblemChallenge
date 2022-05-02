@@ -12,11 +12,9 @@ public:
         for(int i=0;i<arr.size();i++)
         {
             sum+=arr[i];
-            cout<<arr[i]<<' ';
             for(int j=i+2;j<arr.size();j+=2)
             {
                 sum+=prefix[j+1]-prefix[i];
-                cout<<prefix[j+1]-prefix[i]<<' ';
             }
         }
         return sum;
