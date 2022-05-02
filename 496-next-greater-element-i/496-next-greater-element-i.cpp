@@ -8,10 +8,7 @@ public:
         {
             while(!st.empty()&&st.top()<nums2[i])
                 st.pop();
-            if(st.empty())
-                hmap[nums2[i]]=-1;
-            else
-                hmap[nums2[i]]=st.top();
+            hmap[nums2[i]]=st.empty()?-1:st.top();
             st.push(nums2[i]);    
         }
         vector<int> ret;
