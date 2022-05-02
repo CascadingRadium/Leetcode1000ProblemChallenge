@@ -21,15 +21,9 @@ public:
                 ret.push_back(hmap[string(1,s[i])]);
         }
         if(i!=s.length())
-        {
             ret.push_back(hmap[string(1,s[i++])]);
-        }
         if(i!=s.length())
-        {
             ret.push_back(hmap[string(1,s[i])]);
-        }
         return ret;
-        
-        
     }
 };
