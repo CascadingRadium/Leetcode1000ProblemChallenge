@@ -13,13 +13,9 @@ public:
         }
         int ret=0;
         if(nums[l]>nums[r])
-        {
             ret=nums[r];
-        }
         else
-        {
             ret=nums[0];
-        }
         return ret;
         
     }
