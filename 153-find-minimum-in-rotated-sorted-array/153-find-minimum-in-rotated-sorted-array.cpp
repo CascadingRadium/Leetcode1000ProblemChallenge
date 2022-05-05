@@ -12,7 +12,6 @@ public:
                 l=mid;
         }
         int ret=0;
-        cout<<l<<' '<<r<<'\n';
         if(nums[l]>nums[r])
         {
             ret=nums[r];
