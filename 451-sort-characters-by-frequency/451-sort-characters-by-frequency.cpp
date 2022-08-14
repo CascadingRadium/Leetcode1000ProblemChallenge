@@ -6,9 +6,7 @@ public:
         for(auto chr:s)
             hmap[chr]++;
         sort(s.begin(),s.end(),[&hmap](char &a, char &b){
-            if(hmap[a]==hmap[b])
-                return a>b;
-            return hmap[a]>hmap[b];
+            return hmap[a]>hmap[b] || (hmap[a]==hmap[b] && a>b);
         });
         return s;
         
