@@ -33,12 +33,6 @@ public:
                 
             }
         }
-        // for(auto i:dp)
-        // {
-        //     for(auto j:i)
-        //         cout<<j<<' ';
-        //     cout<<'\n';
-        // }
         vector<int> ret(n,-1);
         vector<int> &g=dp[m];
         for(int i=0;i<n;i++)
