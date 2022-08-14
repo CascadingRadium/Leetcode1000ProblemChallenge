@@ -5,9 +5,14 @@ public:
         unordered_map<char,int> hmap;
         for(auto chr:s)
             hmap[chr]++;
-        sort(s.begin(),s.end(),[&hmap](char &a, char &b){
-            return hmap[a]>hmap[b] || (hmap[a]==hmap[b] && a>b);
-        });
+        s="";
+        vector<pair<char,int>> hm(hmap.begin(),hmap.end());
+        sort(hm.begin(),hm.end(),[](auto a, auto b){return a.second>b.second;});
+        for(auto i:hm)
+        {
+            for(int j=0;j<i.second;j++)
+                s.push_back(i.first);
+        }
         return s;
         
         
