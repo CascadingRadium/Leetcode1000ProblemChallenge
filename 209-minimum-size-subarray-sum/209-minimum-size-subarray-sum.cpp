@@ -26,7 +26,6 @@ public:
             else
                 l=mid;
         }
-        cout<<l<<' '<<r<<'\n';
         return r==nums.size()+1?0:r;
     }
 };
