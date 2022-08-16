@@ -2,18 +2,13 @@ class Solution {
 public:
     int chalkReplacer(vector<int>& chalk, int k) 
     {
-        long long sum=accumulate(chalk.begin(),chalk.end(),0LL);
-        long long p=k%sum;
-        int ret=0;
-        for(int i=0;i<chalk.size();i++)
-        {
-            p-=chalk[i];
-            if(p<0)
-            {
-                ret=i;
-                break;
-            }                
-        }
-        return ret;
+        vector<long long> prefixSum(chalk.size());
+        prefixSum[0]=chalk[0];
+        for(int i=1;i<chalk.size();i++)
+            prefixSum[i]=prefixSum[i-1]+chalk[i];
+        long long p=k%prefixSum[chalk.size()-1];
+        auto ptr=upper_bound(prefixSum.begin(),prefixSum.end(),p);
+        return ptr-prefixSum.begin();
+        
     }
 };
