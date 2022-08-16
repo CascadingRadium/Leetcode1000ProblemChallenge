@@ -17,10 +17,7 @@ public:
     }
     int minSubArrayLen(int target, vector<int>& nums) 
     {
-        int l=0,r=nums.size();
-        int test=accumulate(nums.begin(),nums.end(),0);
-        if(test<target)
-            return 0;
+        int l=0,r=nums.size()+1;
         while(r-l>1)
         {
             auto mid=l+(r-l)/2;
@@ -29,6 +26,7 @@ public:
             else
                 l=mid;
         }
-        return r;
+        cout<<l<<' '<<r<<'\n';
+        return r==nums.size()+1?0:r;
     }
 };
