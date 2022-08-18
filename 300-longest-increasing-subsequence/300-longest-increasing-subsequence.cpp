@@ -9,7 +9,7 @@ class Solution
         {
             if(nums[i]>dp.back())
                 dp.push_back(nums[i]);
-            else if(nums[i]<dp.back())
+            else
             {
                 auto ptr=lower_bound(dp.begin(),dp.end(),nums[i]);
                 *(ptr)=nums[i];
